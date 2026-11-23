@@ -23,3 +23,4 @@ e62eb82	0.983302	66.2	discard	window pattern SSSSL
 48753e9	0.981827	66.2	discard	embedding LR 0.9
 5191c39	0.981652	66.2	discard	warmdown ratio 0.8
 8a9a773	0.982906	67.9	discard	value embeddings on all layers
+06ea2af	0.980736	60.2	keep	depth 9 (dim 640)
