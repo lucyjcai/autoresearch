@@ -448,7 +448,7 @@ FINAL_LR_FRAC = 0.0     # final LR as fraction of initial
 
 # Model size
 DEPTH = 10               # number of transformer layers
-DEVICE_BATCH_SIZE = 128  # per-device batch size (reduce if OOM)
+DEVICE_BATCH_SIZE = 64  # per-device batch size (reduce if OOM)
 
 # ---------------------------------------------------------------------------
 # Setup: tokenizer, model, optimizer, dataloader
@@ -509,6 +509,10 @@ model = torch.compile(model, dynamic=False)
 
 train_loader = make_dataloader(tokenizer, DEVICE_BATCH_SIZE, MAX_SEQ_LEN, "train")
 x, y, epoch = next(train_loader)  # prefetch first batch
+# The loader reuses one pinned CPU buffer with a non_blocking H2D copy; wait for the
+# previous copy before refilling, otherwise grad accumulation reads corrupted batches.
+batch_copied = torch.cuda.Event()
+batch_copied.record()
 
 print(f"Time budget: {TIME_BUDGET}s")
 print(f"Gradient accumulation steps: {grad_accum_steps}")
@@ -549,7 +553,9 @@ while True:
         train_loss = loss.detach()
         loss = loss / grad_accum_steps
         loss.backward()
+        batch_copied.synchronize()
         x, y, epoch = next(train_loader)
+        batch_copied.record()
 
     # Progress and schedules
     progress = min(total_training_time / TIME_BUDGET, 1.0)
