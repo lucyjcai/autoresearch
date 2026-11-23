@@ -45,3 +45,4 @@ eba1f10	0.977583	56.7	discard	x0 lambdas init 0.2
 854d19c	0.977825	58.0	discard	value embeddings on all layers (depth 7 dim 768)
 2499629	0.975887	56.7	discard	warmdown ratio 0.6
 7bc6009	0.976630	56.7	discard	embedding LR 0.4
+e6ea4d0	0.976999	62.0	discard	MLP hidden ratio 5
