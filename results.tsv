@@ -17,3 +17,4 @@ d0c6257	0.989091	47.8	discard	depth 12 (dim 768) device batch 64 accum 2 - only 
 f5051d9	0.981937	66.2	discard	weight decay 0.1
 1e5ad49	0.982619	66.2	discard	weight decay 0.3
 a00cc67	0.981527	66.2	discard	unembedding LR 0.008 (within noise)
+e62eb82	0.983302	66.2	discard	window pattern SSSSL
