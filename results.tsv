@@ -30,3 +30,4 @@ f6c4ad6	0.980494	53.9	keep	depth 8 aspect 80 (dim 640) - within noise but less V
 43e65b4	0.978967	49.1	discard	depth 6 dim 768 (aspect 128)
 f40b8b5	0.986912	65.6	discard	depth 7 dim 896 (aspect 128)
 4c1d9d9	0.977834	51.4	discard	MLP hidden ratio 3
+5a3e3c5	0.982577	56.7	discard	logit softcap 30
