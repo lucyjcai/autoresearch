@@ -19,3 +19,4 @@ f5051d9	0.981937	66.2	discard	weight decay 0.1
 a00cc67	0.981527	66.2	discard	unembedding LR 0.008 (within noise)
 e62eb82	0.983302	66.2	discard	window pattern SSSSL
 8a1e850	0.983181	66.2	discard	window pattern SSL
+46e22f8	0.987915	66.4	discard	head dim 64 (10 heads)
