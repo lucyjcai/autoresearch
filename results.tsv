@@ -1,0 +1,15 @@
+commit	val_bpb	memory_gb	status	description
+228791f	0.995922	44.0	keep	baseline
+23c23f2	0.987265	43.9	keep	halve batch size to 2^18
+1a1f630	0.991295	22.2	discard	batch size 2^17 (device batch 64)
+2fdbd30	0.986141	66.2	keep	depth 10 (dim 640) - note big VRAM jump
+4932ed8	0.994281	33.8	discard	depth 10 device batch 64 + grad accum 2 (unexpectedly worse)
+2fdbd30	0.985964	66.2	keep	rerun of depth 10 to measure noise (~0.0002)
+62c7fb7	0.986749	33.8	keep	fix pinned-buffer race in grad accum (device batch 64 accum 2 now matches; was 0.994)
+d933442	1.001231	66.5	discard	batch 2^19 (accum 2) with race fix - 2^18 genuinely better
+69b7841	0.982401	66.2	keep	short window = 1/4 context (512)
+4e894dd	0.983010	66.2	discard	short window = 1/8 context (256)
+8d96005	0.981399	66.2	keep	warmdown ratio 0.7
+e7056d9	0.982585	66.2	discard	warmdown ratio 1.0
+7889c66	0.985106	66.2	discard	matrix LR 0.05
+59e0729	0.982611	66.2	discard	matrix LR 0.03
