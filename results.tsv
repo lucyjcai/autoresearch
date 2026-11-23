@@ -36,3 +36,4 @@ f70bcd2	0.976425	56.7	discard	logit softcap 10 (same as 12)
 4271150	0.977555	42.7	discard	batch 196K tokens (device batch 96)
 c490919	0.977832	56.7	discard	adam betas (0.9, 0.95)
 e9059f6	0.977479	56.7	discard	matrix LR 0.05 at depth 7 dim 768
+30a0bb4	0.975503	56.7	keep	final LR frac 0.05
