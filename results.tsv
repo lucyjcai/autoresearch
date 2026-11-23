@@ -27,3 +27,4 @@ e62eb82	0.983302	66.2	discard	window pattern SSSSL
 f6c4ad6	0.980494	53.9	keep	depth 8 aspect 80 (dim 640) - within noise but less VRAM
 3208a56	0.978698	63.9	keep	depth 8 aspect 96 (dim 768)
 17d9e10	0.976468	56.7	keep	depth 7 dim 768 (aspect 108)
+43e65b4	0.978967	49.1	discard	depth 6 dim 768 (aspect 128)
