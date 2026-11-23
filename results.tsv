@@ -25,3 +25,4 @@ e62eb82	0.983302	66.2	discard	window pattern SSSSL
 8a9a773	0.982906	67.9	discard	value embeddings on all layers
 06ea2af	0.980736	60.2	keep	depth 9 (dim 640)
 f6c4ad6	0.980494	53.9	keep	depth 8 aspect 80 (dim 640) - within noise but less VRAM
+3208a56	0.978698	63.9	keep	depth 8 aspect 96 (dim 768)
